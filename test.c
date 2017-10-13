@@ -88,7 +88,7 @@ void add_dataSource_to_opcServer()
 	}	
 }
 
-void handle_opcua_server(void * arg){
+void handle_opcua_server(){
 
     UA_ServerConfig config = UA_ServerConfig_standard;
     UA_ServerNetworkLayer nl = UA_ServerNetworkLayerTCP(UA_ConnectionConfig_standard, OPCUA_SERVER_PORT);
@@ -115,10 +115,10 @@ void handle_opcua_server(void * arg){
 
 int main(){
 
-	pthread_t opcua_server_id;
+	//pthread_t opcua_server_id;
 
-	pthread_create(&opcua_server_id,NULL,(void *)handle_opcua_server,NULL);
-	
+	//pthread_create(&opcua_server_id,NULL,(void *)handle_opcua_server,NULL);
+	handle_opcua_server();
 	while(1) {
 		sleep(1);
 	}
