@@ -88,7 +88,7 @@ void add_dataSource_to_opcServer()
 	}	
 }
 
-void handle_opcua_server(){
+void handle_opcua_server(void * arg){
 
     UA_ServerConfig config = UA_ServerConfig_standard;
     UA_ServerNetworkLayer nl = UA_ServerNetworkLayerTCP(UA_ConnectionConfig_standard, OPCUA_SERVER_PORT);
